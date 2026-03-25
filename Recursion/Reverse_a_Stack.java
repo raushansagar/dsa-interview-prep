@@ -2,7 +2,7 @@
 /*
     Reverse a Stack
     GFG Link :- https://www.geeksforgeeks.org/problems/reverse-a-stack/1
- */
+*/
 
 
 // Approch 1
