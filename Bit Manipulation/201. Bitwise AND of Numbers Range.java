@@ -1,6 +1,9 @@
-public class 201. Bitwise AND of Numbers Range {
-    
-}
+/*
+    201. Bitwise AND of Numbers Range
+    Leetcode Link :- https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+*/
+
+
 
 // Approch 1
 // Time compelxity O(n) n = right-left+1
