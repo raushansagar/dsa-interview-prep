@@ -52,3 +52,26 @@ class Solution2{
 // Time complexity O(n)
 // Space complexity O(1)
 
+class Solution {
+    public int singleNumber(int[] nums) {
+        int n = nums.length;
+        int result = 0;
+
+        // Time compexity O(32 * n)
+        for(int bit = 0; bit <= 31; bit++){
+            int one = 0;
+
+            for(int val : nums){
+                if((val & (1 << bit)) !=  0){
+                    one += 1;
+                }
+            }
+
+            if(one%3 == 1){
+                result = (result | (1 << bit));
+            }
+        }
+
+        return result;
+    }
+}

@@ -66,7 +66,7 @@ class Solution {
 }
 
 
-// Approch 1
+// Approch 3
 // Time complexity O(n)
 
 class Solution3{
