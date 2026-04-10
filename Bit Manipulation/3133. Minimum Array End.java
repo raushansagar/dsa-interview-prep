@@ -8,6 +8,7 @@
 // Time complexity O(n)
 
 
+
 class Solution {
     public long minEnd(int n, int x) {
         long num = x;
