@@ -24,3 +24,32 @@ class Solution {
         return max;
     }
 }
+
+
+// Approch 2
+// T.C = O(n)
+
+class Solution {
+    public int maxDistance(int[] colors) {
+        int n = colors.length;
+        int max = 0;
+
+        int i = 0;
+        int j = n-1;
+
+        while(i < j && colors[i] == colors[j]){
+            j--;
+        } 
+
+        if(i > j) return 0;
+        max = Math.max(max, Math.abs(i-j));
+        j = n-1;
+
+        while(i < j && colors[i] == colors[j]){
+            i++;
+        } 
+
+        max = Math.max(max, Math.abs(i-j));
+        return max;
+    }
+}
