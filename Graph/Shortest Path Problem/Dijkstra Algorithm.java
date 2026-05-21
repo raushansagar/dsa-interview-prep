@@ -4,9 +4,11 @@
  */
 
 
+
+// Time compelixiy O(E * V)
+
 class Solution {
     public int[] dijkstra(int V, int[][] edges, int src) {
-        
         Map<Integer, List<int[]>> adj = new HashMap<>();
         
         for(int[] d : edges){
@@ -21,7 +23,6 @@ class Solution {
             adj.get(v).add(new int[] {u, w});
         }
         
-        boolean[] vis = new boolean[V];
         
         int[] ans = new int[V];
         Arrays.fill(ans, Integer.MAX_VALUE);
@@ -36,16 +37,14 @@ class Solution {
             int[] temp = pq.remove();
             int u = temp[0];
             int w = temp[1];
-            
-            if(vis[u]) continue;
-            vis[u] = true;
-            
+
+            if(ans[u] > w) continue;
             
             for(int[] d : adj.getOrDefault(u, new ArrayList<>())){
                 int v = d[0];
                 int newWeg = w + d[1];
                 
-                if(ans[v] > newWeg){
+                if(newWeg < ans[v]){
                     ans[v] = newWeg;
                     pq.add(new int[]{v, newWeg});
                 }
