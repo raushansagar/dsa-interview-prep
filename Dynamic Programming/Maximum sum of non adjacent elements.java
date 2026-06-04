@@ -25,3 +25,29 @@ class Solution {
         return solve(0, nums, n, memo);
     }
 }
+
+
+
+
+// Button up approch 
+class Solution {
+    public int rob(int[] nums){
+        int n = nums.length;
+        if(n == 1) return nums[0];
+
+        int[] memo = new int[n];
+        memo[0] = nums[0];
+
+        for(int i = 1; i < n; i++){
+
+            int take = nums[i];
+            take += (i > 1) ? memo[i-2] : 0;
+
+            int not_take = memo[i-1];
+
+            memo[i] = Math.max(take, not_take);
+        }
+
+        return memo[n-1];
+    }
+}   
